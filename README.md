@@ -1,9 +1,9 @@
 # OrderOfService
-##Compilation
+#Compilation
 <p>javac OrderOfService.java</p>
 
-##Usage
+#Usage
 <p> java OrderOfService P100 P200</p>
 
-##download
+#download
 <p>git clone https://github.com/CharlieSwires/OrderOfService</p>

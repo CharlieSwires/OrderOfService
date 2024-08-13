@@ -12,22 +12,26 @@ public class OrderOfService extends JPanel {
 	private static String hymn2 ="";
 	private static String hymn3 ="";
 	private static String hymn4 ="";
+	private static int WIDTH = 1920;
+	private static int HEIGHT = 1080;
+	private static int FONT_SIZE = 180;
+	
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2d = (Graphics2D) g;
 		// Set the custom font to Calibri, plain style, 14 points
-		Font customFont = new Font("Calibri", Font.PLAIN, 180);
+		Font customFont = new Font("Calibri", Font.PLAIN, FONT_SIZE);
 		g2d.setFont(customFont);
 		// Draw the text with the custom font
 		g2d.setColor(Color.BLACK);
-		g2d.fillRect(0, 0, 1920, 1080);
+		g2d.fillRect(0, 0, WIDTH, HEIGHT);
 		g2d.setColor(Color.WHITE);
 
-		g2d.drawString(hymn1.length() > 0 ? "1:"+hymn1:hymn1, 100, 50+180);
-		g2d.drawString(hymn2.length() > 0 ? "2:"+hymn2:hymn2, 100, 1080/2-50);
-		g2d.drawString(hymn3.length() > 0 ? "3:"+hymn3:hymn3, 1920/2 - 100, 50+180);
-		g2d.drawString(hymn4.length() > 0 ? "4:"+hymn4:hymn4, 1920/2 - 100,1080/2-50);
+		g2d.drawString(hymn1.length() > 0 ? "1:"+hymn1:hymn1, 100, 50+FONT_SIZE);
+		g2d.drawString(hymn2.length() > 0 ? "2:"+hymn2:hymn2, 100, HEIGHT/2-50);
+		g2d.drawString(hymn3.length() > 0 ? "3:"+hymn3:hymn3, WIDTH/2 - 100, 50+FONT_SIZE);
+		g2d.drawString(hymn4.length() > 0 ? "4:"+hymn4:hymn4, WIDTH/2 - 100,HEIGHT/2-50);
 	}
 	public static void main(String[] args) {
 		if (args.length >= 1) {
@@ -62,7 +66,7 @@ public class OrderOfService extends JPanel {
 
 		OrderOfService panel = new OrderOfService();
 		frame.add(panel);
-		frame.setSize(1920, 1080);
+		frame.setSize(WIDTH, HEIGHT);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 	}
